@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JS clock</h1>
+    <span id="date-box"></span>
+
+    <br />
+    <button id="button1" onclick="startClock()">Start the clock</button>
+    <button id="button2" onclick="stopClock()">Stop the clock</button>
+
+
+    <script>
+      let timeId = null;
+
+      // let mybutton = document.getElementById("button1");
+      // mybutton.addEventListener("click", startClock);
+
+      
+
+      function startClock() {
+        timeId = setInterval(function () {
+          let currentdate = new Date();
+          console.log('date', currentdate);
+          document.getElementById("date-box").innerText = currentdate;
+        }, 1000);
+      }
+
+      function stopClock (){
+        clearInterval(timeId)
+      }
+    </script>
+  </body>
+</html>

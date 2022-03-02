@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Two way access to prototype and constructor
+
+      function Student1(name, roll, marks) {
+        // let obj = {};
+        // obj.name = name;
+        // obj.roll = roll;
+        // obj.marks = marks;
+        this.name = name;
+        this.roll = roll;
+        this.marks = marks;
+        // return obj;
+      }
+
+      let createStudent1 = new Student1("abcd", 1, 12);
+      let createStudent2 = new Student1("abcde", 2 ,14);
+
+      // console.log(Student1.prototype);
+      // console.log(Student1.prototype.constructor);
+
+      //first way to have a method :- will make copies of functions for all objects created
+
+      function Student2(name, roll) {
+        // let obj = {};
+        this.name = name;
+        this.roll = roll;
+        this.getRollNo = function () {
+          console.log(this.roll);
+        };
+        // return obj;
+      }
+
+      let createStudent3 = new Student2("abcd", 12);
+      let createStudent4 = new Student2("abcde", 14);
+
+      // console.log(createStudent3);
+      // console.log(createStudent4);
+
+      //second way to have a method :- using prototype to save from repition
+
+      Student1.prototype.getName = function () {
+        console.log(this.name);
+      };
+
+      let createStudent11 = new Student1("xyz", 45, 76);
+
+      let createStudent5 = new Student2("abcd", 12);
+      let createStudent6 = new Student2("abcde", 14);
+
+      // console.log(createStudent5);
+      // console.log(createStudent6);
+
+    </script>
+  </body>
+</html>

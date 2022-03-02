@@ -1,0 +1,30 @@
+@keyframes changeShape {
+  from {
+    height: 400px;
+  }
+  to {
+    height: 600px;
+  }
+
+  /* instead to-from one may use percentages also */
+}
+
+#anime-box {
+  background-color: burlywood;
+  height: 100px;
+  width: 100px;
+  /* tranform to add positions */
+  /* transform: rotate(0deg); */
+  /* transition to add animation in transition */
+  /* transition: 1s ease-in-out; */
+
+  /* animation */
+  /* animation: changeShape 1s ease-in-out infinite alternate */
+}
+
+/* for transition effect */
+#anime-box:hover {
+  height: 200px;
+
+  /* transform: scale(1.5) translate(150px); */
+}

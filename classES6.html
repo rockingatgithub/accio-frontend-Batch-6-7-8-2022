@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Vehicle{
+        constructor(name, price) {
+          this.name = name;
+          this.price = price;
+        }
+
+        //function goes to prototype itself
+        getPrice() {     
+          console.log(this.price);
+        }
+      }
+
+      let vehicle1 = new Vehicle("ferrari", 20000000);
+      console.log(vehicle1);
+
+      class Car extends Vehicle{
+        constructor(model, noOfDoors){
+          super("car", 230000);
+          this.model = model;
+          this.noOfDoors = noOfDoors;
+        }
+
+        
+
+        getModel(){
+          console.log(this.model);
+          
+        }
+
+      }
+
+      let car1 = new Car("SUV", 4);
+      // let car2 =  Car("SUV", 4);     //add new keyword to run or it will throw error
+
+      console.log(car1);
+      console.log(car2);
+
+
+    </script>
+  </body>
+</html>

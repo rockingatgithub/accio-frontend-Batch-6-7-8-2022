@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  "use strict"; // uncomment for use strict effect.....
+      function demo() {
+        console.log(this);
+      }
+
+      function demo1(a, b) {
+        console.log(this);
+        console.log(a+b);
+      }
+
+      // console.log(this);
+
+      // const demo2 = () => {  console.log(this) }
+
+      let obj = {
+        prop1: "12",
+        innerFunction: function () {
+          console.log(this);
+          console.log(this.prop1)
+        },
+      };
+
+      // demo();
+      // demo2();
+
+      // calling object function
+
+      // obj.innerFunction();
+
+
+      // binding function to objects ============================
+
+       // binding function to object as it's not bind in strict mode =====
+
+      //  demo.apply(obj);   // difference in passing argument
+      //  demo.call(obj);
+
+    </script>
+  </body>
+</html>
