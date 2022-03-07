@@ -12,16 +12,26 @@
         constructor(name, price) {
           this.name = name;
           this.price = price;
+          this.model = "Sedan"
         }
 
         //function goes to prototype itself
         getPrice() {     
           console.log(this.price);
         }
+
+        getModel() {
+          console.log(this.model)
+        }
+        setModel(model) {
+          this.model = model;
+        }
       }
 
       let vehicle1 = new Vehicle("ferrari", 20000000);
-      console.log(vehicle1);
+      let vehicle2 = new Vehicle("BMW", 20000000);
+
+      // console.log(vehicle1);
 
       class Car extends Vehicle{
         constructor(model, noOfDoors){
@@ -29,8 +39,6 @@
           this.model = model;
           this.noOfDoors = noOfDoors;
         }
-
-        
 
         getModel(){
           console.log(this.model);
@@ -42,8 +50,20 @@
       let car1 = new Car("SUV", 4);
       // let car2 =  Car("SUV", 4);     //add new keyword to run or it will throw error
 
-      console.log(car1);
-      console.log(car2);
+
+      // console.log(car1);
+      // console.log(car2);
+
+      //  class expression =====================
+      let BMW = class BMW extends Car {
+        constructor() {
+          super("Sedan", 20);
+          this.carName = "BMW";
+        }
+        
+      }
+
+      let BMW1 = new BMW();
 
 
     </script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>Random dog image</h1>
+
+    <div>
+        <button onclick="getNewImage()" >  Click for a new image </button>
+    </div>
+
+    <div>
+        <img id="dog-image" src="" height="200" width="200" />
+    </div>
+    
+    <script>
+
+        function getNewImage () {
+
+            let xhrobj = new XMLHttpRequest();
+            xhrobj.open('get', 'https://dog.ceo/api/breeds/image/random');
+            xhrobj.onload = () =>{ 
+                let res = JSON.parse(xhrobj.response);  
+                document.getElementById("dog-image").setAttribute("src", res.message);
+              };
+
+            xhrobj.onerror = () => { console.log("Error") };
+
+            xhrobj.send();
+
+        }
+
+
+    </script>
+
+</body>
+</html>

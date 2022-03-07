@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // Hoisting in JS
+
+        // "use strict";
+
+        func();
+
+        console.log( "xyz1", a);
+
+        console.log( "xyz2", b);
+
+        console.log( "xyz3", c);
+
+
+
+        function func () {
+            // "use strict";
+
+            // variable a has function level scope ===========
+            var a = 4;
+            console.log("xyz", a);
+        }
+
+
+        // variables in global scope ===============
+
+        var a = 3;
+        let b = 4;
+        const c = 5;
+
+        // func();
+
+
+        // block level scope
+
+        if(0) {
+            let a = 5;
+            console.log(a);
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
